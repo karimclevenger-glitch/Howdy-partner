@@ -39,7 +39,8 @@ gadgets in the story; puzzle and mechanics detail belongs in later chapter desig
 because both writers over-engineered it. Don't repeat that.
 
 ## Current phase
-**Phase 0: Foundations.** PC-first is decided. The owner sent back "Morrow Isle" (archived in `docs/story-drafts/`). Claude's
-rewrite, **"Vesper House"** (`docs/story-drafts/draft-8-claude.md`), is with ChatGPT for a cohesion pass (round 4). The next
-step after both writers approve is the owner's sign-off, which then goes to `docs/STORY.md`. After that: the art-style tests, then
-Phase 1 (the greybox engine). No game code yet.
+**Phase 0: Foundations.** PC-first is decided. "Vesper House" (draft 11) was approved by both writers and is in `docs/STORY.md`,
+**awaiting the owner's final sign-off**. (The owner rejected an earlier both-approved story, "Morrow Isle", so don't treat the
+writers' approval as final.) Once the owner signs off, change STORY.md's status line and log it in the Decision Log. Next steps:
+the art-style tests (`prompts/001-art-style-tests.md`, which may need updating for Vesper House), then Phase 1 (the greybox
+engine). No game code yet.
