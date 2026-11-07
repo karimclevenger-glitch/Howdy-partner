@@ -22,13 +22,25 @@ Every handoff is a **new file** in `docs/story-drafts/`, numbered in order:
 | 2 | `draft-6-claude.md` | Claude |
 | … | and so on | |
 
-**The first four lines of every handoff file must be exactly this format** (Claude checks for it automatically):
+**The first five lines of every handoff file must follow this format.** Claude checks for it automatically. Line 5 is a
+plain-English note to the other writer, saying it's their turn and what to do:
 
+When Claude hands off to ChatGPT:
+```
+STATUS: READY FOR CHATGPT
+CLAUDE: CHANGES REQUESTED
+CHATGPT: CHANGES REQUESTED
+ROUND: 1
+NOTE TO CHATGPT: Your turn to review. Read this whole file, fix or answer every OPEN issue in "Review notes", then hand back draft-5-chatgpt.md following prompts/003-story-review-rounds.md.
+```
+
+When ChatGPT hands off to Claude:
 ```
 STATUS: READY FOR CLAUDE
 CLAUDE: CHANGES REQUESTED
 CHATGPT: APPROVED
-ROUND: 1
+ROUND: 2
+NOTE TO CLAUDE: Your turn to review. I resolved issues 1–6 and left 7 open (see Disagreements).
 ```
 
 - Line 1 is `STATUS: READY FOR CLAUDE` when ChatGPT hands off, `STATUS: READY FOR CHATGPT` when Claude hands off, and
@@ -37,7 +49,7 @@ ROUND: 1
 - You only change **your own** verdict line. Copy the other writer's line exactly as they left it, unless the other
   writer's verdict was APPROVED and you've since made significant changes. In that case, reset it to `PENDING`.
 
-After those four lines, every handoff file has:
+After those five lines, every handoff file has:
 1. **`## Review notes`**: a numbered list of issues, each marked **OPEN** or **RESOLVED**, with who raised it. Keep
    earlier issues in the list and update their status, so nothing gets lost between rounds.
 2. **`## Changes in this version`**: what you changed and why, one line each.

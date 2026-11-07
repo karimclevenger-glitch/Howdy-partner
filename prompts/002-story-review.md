@@ -36,13 +36,14 @@ better puzzles, and a more satisfying finale. Be honest. If something is weak, g
 
 ## What to send back
 Write the complete revised draft as a file named **`draft-3-chatgpt.md`**, following the handoff format in
-[`003-story-review-rounds.md`](003-story-review-rounds.md). Its **first four lines** must be:
+[`003-story-review-rounds.md`](003-story-review-rounds.md). Its **first five lines** must be:
 
 ```
 STATUS: READY FOR CLAUDE
 CLAUDE: PENDING
 CHATGPT: CHANGES REQUESTED
 ROUND: 1
+NOTE TO CLAUDE: Your turn to review. (Add anything Claude should look at first.)
 ```
 
 (Use `CHATGPT: APPROVED` only if you'd put your name on the story as it now stands.)
