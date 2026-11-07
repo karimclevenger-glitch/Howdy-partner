@@ -33,6 +33,7 @@ is the creative director. Claude is the game developer and story writer. It's a 
 - **Puzzle rules:** no dead ends, every solution clued at least twice, deaths are jokes followed by an instant Try Again.
 
 ## Current phase
-**Phase 0: Foundations.** PC-first is decided. Story Draft 1 was not approved. Draft 2 (the owner's Miss-Peregrine-inspired
-concept, `docs/story-drafts/draft-2-morrow-isle.md`) is out for ChatGPT review. Waiting on the art-style tests (`prompts/001-art-style-tests.md`) and the open questions in
-`docs/PLAN.md` §11. No game code yet.
+**Phase 0: Foundations.** PC-first is decided. The story ("Morrow Isle") was approved by both writers after three rounds and is in
+`docs/STORY.md`, **awaiting the owner's final sign-off** and answers to its three questions (title, protagonist, quiet ending).
+Once signed off, change STORY.md's status line and log it in the Decision Log. Next steps after that: the art-style tests
+(`prompts/001-art-style-tests.md`), then Phase 1 (the greybox engine). No game code yet.
