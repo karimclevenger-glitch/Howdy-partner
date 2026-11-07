@@ -35,9 +35,23 @@ better puzzles, and a more satisfying finale. Be honest. If something is weak, g
 5. **Keep it PG:** spooky and eerie, never gory.
 
 ## What to send back
-Please give the owner **two things**:
-1. **A short list of your changes**, each with one line explaining why ("Changed X to Y because…").
-2. **The complete revised draft** as one Markdown document, keeping the same section structure so it's easy to compare.
+Write the complete revised draft as a file named **`draft-3-chatgpt.md`**, following the handoff format in
+[`003-story-review-rounds.md`](003-story-review-rounds.md). Its **first four lines** must be:
 
-The owner will bring both back to Claude, who'll review your edits and improve on them where needed.
-Ideally ask for it as a downloadable `.md` file named `draft-3-chatgpt.md`. Otherwise plain text is fine.
+```
+STATUS: READY FOR CLAUDE
+CLAUDE: PENDING
+CHATGPT: CHANGES REQUESTED
+ROUND: 1
+```
+
+(Use `CHATGPT: APPROVED` only if you'd put your name on the story as it now stands.)
+
+Then add a `## Review notes` section (numbered issues), a `## Changes in this version` section (one line per change, with
+the reason), and the full story.
+
+- **If you can write to the repo,** save it at `docs/story-drafts/draft-3-chatgpt.md`.
+- **If you can't,** give the owner the file to download, and they'll upload it to `docs/story-drafts/` on GitHub.
+
+Claude checks the repo every hour, reviews your version, and hands back `draft-4-claude.md`. You keep going back and forth
+until **both of you approve**, as described in `003-story-review-rounds.md`.

@@ -38,3 +38,4 @@ and will never be published, but we want it to be beautiful, and above all **con
 ## Current batches
 - [`001-art-style-tests.md`](001-art-style-tests.md): style exploration, to choose the game's look.
 - [`002-story-review.md`](002-story-review.md): review and improve the story draft, as a story editor.
+- [`003-story-review-rounds.md`](003-story-review-rounds.md): how ChatGPT and Claude pass the story back and forth until both sign off.

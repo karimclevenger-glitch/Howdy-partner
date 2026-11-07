@@ -18,8 +18,10 @@ is the creative director. Claude is the game developer and story writer. It's a 
 - **Original content only.** Never reuse names, characters, specific powers, terms, places, plot, puzzles, dialogue, art,
   music or "look" from King's Quest VII, Miss Peregrine's Home for Peculiar Children, or any other existing work.
   Premises, genre conventions and mechanics are fine.
-- **Story workflow:** Claude drafts, ChatGPT reviews and revises (via `prompts/002-story-review.md`), Claude reviews
-  ChatGPT's edits, and the owner decides. Review ChatGPT's work on its merits, and keep what's better.
+- **Story workflow:** Claude drafts, ChatGPT reviews and revises (via `prompts/002-story-review.md`), and then the two
+  alternate numbered drafts in `docs/story-drafts/` under `prompts/003-story-review-rounds.md` until both approve.
+  Log every round in `docs/story-drafts/REVIEW-LOG.md`. Review ChatGPT's work on its merits and keep what's better.
+  The owner gives the final sign-off.
 - **Collaborate.** Ask the owner questions at real decision points. They want to be involved, not handed things.
 - **Be honest.** Say clearly when something isn't working, is beyond what Claude does well, or needs another tool
   (ChatGPT for illustration, Runway for cinematics, Suno for music, ElevenLabs for voice).
