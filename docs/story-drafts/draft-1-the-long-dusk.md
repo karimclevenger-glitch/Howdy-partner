@@ -1,7 +1,8 @@
-# The Story — Draft 1 (for your approval)
+# Story Draft 1: "The Long Dusk" (archived, not approved)
 
-> **Status:** DRAFT — waiting on your notes. Nothing here is locked until you say so.
-> Mark it up however you like: "love this", "cut this", "what if instead…". This is a conversation.
+> **Status:** NOT APPROVED. The owner wasn't loving it, so we're doing a fresh pitch round, written game-first.
+> Kept for reference only, so good pieces can be salvaged. The owner **did** like the "stuck in time" idea and
+> wants a repeating-day time loop explored in the new pitches.
 
 ---
 
@@ -435,7 +436,7 @@ art or music from King's Quest VII or any other game.
 3. **The ending's emotion.** I've aimed for something that might make you a little teary. Is that what you want,
    or would you rather keep it lighter?
 4. **How the heroines look.** Hair, skin tone, build, clothing: do you have a picture in your head? (I put draft
-   descriptions in `docs/ART-STYLE-TESTS.md`, but it's your call.)
+   descriptions in the art tests, but it's your call.)
 5. **Anything you specifically loved as a kid** in that style of game (a kind of puzzle, a type of scene, a mood)
    that you want to make sure has a modern, original equivalent here?
 6. **Length.** As drafted, this is roughly 45–50 scenes over a prologue + 6 chapters, probably 6–10 hours of play.

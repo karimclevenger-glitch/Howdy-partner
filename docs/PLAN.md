@@ -9,10 +9,11 @@
 ## The short version
 
 - **What:** an original fairy-tale adventure. Two heroines in alternating chapters, one-tap "smart" interaction,
-  inventory puzzles, comic deaths with instant Try Again, and a story with real heart. The draft is in [`STORY.md`](STORY.md).
-- **Where it runs:** iPhone, iPad and PC from **one codebase**. It's a web game you "Add to Home Screen" on your
-  iPhone, so it opens full-screen like an app and works offline. **No Mac and no App Store needed.** We can wrap it
-  as a real native iOS app later if you want, but you won't need to.
+  inventory puzzles, eerie-funny deaths with instant Try Again, and a story with real heart. The current story draft is
+  [`story-drafts/draft-2-morrow-isle.md`](story-drafts/draft-2-morrow-isle.md): an island time loop, a bird-headmistress,
+  a house of unusual children, and invisible monsters.
+- **Where it runs:** **PC first**, in your web browser (or installed as a desktop app icon from Chrome or Edge).
+  Because it's a web game, the **same code also runs on your phone** as a bonus. **No Mac and no App Store needed.**
 - **Who does what:** I design, write, and build **all the code, tools, story, dialogue and puzzles**, and I write
   every art prompt. **You** are the creative director and playtester, and the bridge to ChatGPT and Runway.
   ChatGPT paints the art. Runway animates a handful of big cinematic moments.
@@ -50,7 +51,8 @@ thing: **a game that gives you that feeling, while being entirely its own.**
 | Music | **Recommended: Suno** (AI music) | I can write the music-box melody and simple chimes myself. I can't produce a full score at a quality you'd be proud of. |
 | Sound effects | **Free libraries** (freesound.org, Sonniss GDC bundles) or **ElevenLabs** | I can find, trim, and mix them. |
 | Voice acting | **Optional, later: ElevenLabs** | The game is built subtitles-first. Voices can be added at the end without changing anything. (If you ever get an ElevenLabs API key, I can generate every line myself in one go.) |
-| iPhone testing | **You** | I test in an emulated iPhone browser and take screenshots, but I can't hold a real phone. Safari has real quirks only your device will show. |
+| Real-device testing | **You** | I test in a real browser here (the same engine as Chrome and Edge on your PC) and take screenshots I can look at. I can't hold your phone, so phone checks are yours. |
+| Talking to ChatGPT | **Through the repo** | ChatGPT is connected to this repo. Every request I make of it lives in [`prompts/`](../prompts/README.md), so you just point ChatGPT at a file. |
 | Native iOS app (optional, only if wanted) | **You need a Mac with Xcode** | I can't run Xcode from here. This is why the plan is designed not to need it. |
 
 ### Tools: what you have, what I'd add
@@ -65,26 +67,33 @@ thing: **a game that gives you that feeling, while being entirely its own.**
 
 ---
 
-## 3. Platform: why a web game and not an App Store app
+## 3. Platform: PC first, phone as a bonus
 
-| Option | Runs on | What you need | Verdict |
-|---|---|---|---|
-| **Web game installed to Home Screen (PWA)** | iPhone, iPad, PC, Mac, anything | Nothing. Open a link in Safari, then Share → Add to Home Screen | **Recommended.** Full-screen, works offline, no Apple account, I can build and test everything myself. |
-| Same game wrapped as a native iOS app (Capacitor) | iPhone/iPad | A Mac with Xcode. A free Apple ID only lets you install it for 7 days at a time, and the $99/year developer account lets you keep it. | Optional, later. The only real benefits are vibration feedback and an App Store-style icon. |
-| A different engine (Godot / Unity) | Everything | Their visual editors, which I can't see or use, and still a Mac for iOS | Not recommended for us. I'd be working half-blind. |
+**Decided:** you have a PC and a phone, and you're happy with PC-only if that makes a better game. It does, in specific ways:
 
-**What this means for you:** I push an update, a few minutes later you open the game on your phone, and you're
-playing the new version. Your save game lives on your phone, and there's a "back up my saves" button so
-you can't lose progress.
+- **Real mouse hover.** The classic adventure-game feel, where the cursor changes as it passes over things you can
+  interact with, only exists with a mouse.
+- **A big screen.** More painted detail visible, characters drawn larger, comfortable text.
+- **I can test exactly what you'll play.** The browser I test in here is the same engine as Chrome and Edge on Windows.
+- **Fewer compromises.** Every design decision gets made for the mouse first.
 
-Two small iPhone quirks I'll handle:
-- Sound can't start until you first touch the screen (an Apple rule), so the title screen will be "tap to begin."
-- Web apps on iPhone can't lock themselves to landscape, so if you hold the phone upright you'll see a polite
-  "please turn me sideways" screen.
+Because it's a web game, **choosing PC first doesn't cost us the phone.** The same game still runs on your phone with
+touch controls. I just won't bend the PC version out of shape to fit a small screen.
 
-**Where the game will be hosted.** If this repo is public, free GitHub Pages works. If it's private,
-GitHub Pages needs a paid GitHub plan, and Cloudflare Pages or Netlify are free alternatives. Either way it
-becomes a URL only you know. *(Question for you at the bottom.)*
+| Option | Verdict |
+|---|---|
+| **Web game, played in Chrome or Edge on your PC** (optionally "installed" so it gets its own desktop icon and window) | **Chosen.** Nothing to install, auto-updates, and I can build and test everything myself. |
+| The same game on your phone's browser | A free bonus, kept working but not the priority. |
+| A native desktop app (a wrapper around the same game) | Possible later if you want a double-click icon that feels like a "real" program. Not needed. |
+| A different engine (Godot / Unity) | Not recommended. Their visual editors are something I can't see or use, so I'd be working half-blind. |
+
+**What this means for you:** I push an update, you refresh the game in your browser, and you're playing the new
+version. Your saves live in your browser, and there's a "back up my saves" button so you can't lose progress.
+
+**Hosting (where the game lives online).** I recommend **keeping this repo private.** Your personal email address is on the
+repo's first commit, and if the repo were public, anyone could see it, along with your story and art. Private repos
+can't use GitHub's free hosting, so when there's a first playable build I'll set up a private-repo-friendly option
+(e.g., Cloudflare Pages, which is free). That will take you about five minutes, once, and I'll walk you through it. Until then there's nothing to do.
 
 ---
 
@@ -92,10 +101,10 @@ becomes a URL only you know. *(Question for you at the bottom.)*
 
 ### Controls
 
-Classic 90s adventure games used one smart cursor. Touch actually suits that better than a mouse,
-so we design for touch first.
+Classic 90s adventure games used one smart cursor that changes as you move over things. **The mouse on PC is our main
+target.** Touch on the phone gets an equivalent for every action.
 
-| Action | iPhone / iPad | PC |
+| Action | Phone (touch) | PC (mouse, the main target) |
 |---|---|---|
 | Walk | Tap the ground | Click |
 | Do the obvious thing (talk, take, open, use, go through an exit) | **Tap** it | Click |
@@ -170,7 +179,7 @@ because writing my own graphics driver would add risk and give us nothing.
 │ CORE           Game loop · drawing (PixiJS) · touch & mouse ·       │
 │                sound · loading · tweening/animation · screen sizing │
 ├─────────────────────────────────────────────────────────────────────┤
-│ PLATFORM       Browser / iPhone home-screen app · offline cache ·   │
+│ PLATFORM       Browser on PC (or phone) · optional install ·        │
 │                storage                                              │  ← changes least
 └─────────────────────────────────────────────────────────────────────┘
 ```
@@ -214,18 +223,17 @@ long for the subtitle box.
 talked to, where everyone is) lives in one place that gets saved. Story flags have exact names that the code checks
 before you ever play, so a typo can't silently break a puzzle.
 
-**Screens of every shape.** iPhones are very wide, iPads are nearly square, and PCs are in between. My solution:
-- Every scene has a **"safe frame"** in the middle where all the interactive things and walking happen.
-- Backgrounds are painted **larger than the safe frame**, at the 3:2 landscape shape ChatGPT already produces.
-  An iPad shows a bit more sky and floor, and a PC shows exactly the safe frame.
-- On very wide iPhones the slim leftover strips at the sides become a decorative storybook border that holds the
-  satchel and menu buttons.
-- Result: no ugly black bars, nothing important ever cut off, and art prompts that say exactly where to keep the important stuff.
-- *(We'll confirm the exact sizes in the first art test, in case ChatGPT's output has changed.)*
+**Screen shape.** The game is designed for a standard **16:9 PC screen** (1920×1080 and up).
+- Every scene has a **"safe frame"**, the 16:9 area where all the interactive things and walking happen.
+- If ChatGPT gives us 3:2 images instead of 16:9, the extra strip at the top and bottom gets trimmed, which is why every art
+  prompt says to keep the top and bottom 10% free of anything important.
+- On a phone (wider than 16:9), the slim leftover strips at the sides become a decorative storybook border that holds the
+  satchel and menu buttons. No ugly black bars, and nothing important cut off.
+- *(We'll confirm the exact image sizes in the first art test.)*
 
-**Performance on iPhone.** Images are compressed to a modern format (WebP), so a full painted background
-comes in at a few hundred KB. Each chapter loads only its own art. Target: smooth 60 frames per second on any iPhone from
-the last ~5 years. I'll set size budgets per scene and have the build warn me if we exceed them.
+**Performance.** Images are compressed to a modern format (WebP), so a full painted background comes in at a few hundred KB.
+Each chapter loads only its own art. Target: smooth 60 frames per second on an ordinary PC, still smooth on a recent
+phone. I'll set size budgets per scene and have the build warn me if we exceed them.
 
 ### My development tools (built into the game, hidden from players)
 
@@ -245,8 +253,8 @@ These tools are what make the project doable. With a secret developer switch on:
   logic. If a change ever makes a chapter impossible to finish, I find out before you do.
 - **The no-dead-ends checker.** Each chapter's puzzle chart is written down as data, and a tool proves every goal can still be
   reached from every state.
-- **Screenshot checks** at iPhone, iPad and PC sizes in a headless browser. I can look at the screenshots myself.
-- **You** test the feel: fun, difficulty, humor, and whether it looks right on a real iPhone.
+- **Screenshot checks** at PC and phone sizes in a headless browser. I can look at the screenshots myself.
+- **You** test the feel: fun, difficulty, humor, and whether it looks right on your PC and phone.
 
 ### Updating your phone
 
@@ -260,7 +268,7 @@ offers to refresh.
 ### Art direction
 
 I'd like you to look at two directions in ChatGPT before we commit. Ready-to-paste prompts are in
-[`ART-STYLE-TESTS.md`](ART-STYLE-TESTS.md).
+[`prompts/001-art-style-tests.md`](../prompts/001-art-style-tests.md), which also explains each style in plain words.
 
 **A. Painted storybook (my recommendation)**
 Lush hand-painted backgrounds (gouache and watercolor texture) with characters in **clean outlines and flat colors
@@ -351,7 +359,7 @@ rarely have to redo one.
 Each phase ends with something **you can play or look at**, and a check-in where you tell me how it feels.
 
 ### Phase 0: Foundations *(we're here)*
-- You review [`STORY.md`](STORY.md), and we revise it until you love it.
+- **Story pitch round:** a fresh set of story pitches written the way a game writer works. You pick and mix, then we develop the winner until you love it.
 - You try the art-style prompts and we pick a direction.
 - You answer the questions at the bottom.
 - **Done when:** story approved, style chosen, hosting decided.
@@ -361,8 +369,8 @@ Everything working with **placeholder art** (simple shapes and silhouettes): wal
 tapping and the hold-to-look magnifier, the satchel and drag-and-drop items, dialogue and narrator, a scripted
 cutscene, a death with Try Again, saving and loading, the hint companion, the developer tools, Add to Home Screen,
 offline play, and auto-publishing.
-- **Done when:** you can play a tiny test scene **on your iPhone**: walk, pick something up, use it, talk to
-  someone, die, try again, and quit and resume.
+- **Done when:** you can play a tiny test scene **on your PC** (and it also works on your phone): walk, pick something up,
+  use it, talk to someone, die, try again, and quit and resume.
 
 ### Phase 2: The art test *(you + me)*
 One real Glasswater background, Tamsin built as a puppet, one supporting character, one item.
@@ -398,27 +406,25 @@ comfort settings, and (optional) the native iOS wrapper.
 | **Scope: this is a big game** | High | Chapter 1 first, then an honest re-plan. If we need to trim, we trim scenes, not story. |
 | **I don't remember past sessions** | Certain | Every Claude session starts fresh. **Everything we decide gets written in this repo** (this plan, the story bible, the decision log, and a `CLAUDE.md` I read first every time). If it isn't written down, I won't know it. |
 | **Puzzles too hard or too easy** | Medium | I design carefully, but only playtesting tells. Your reactions are the most valuable input in the project. |
-| **iPhone Safari quirks** | Medium | I handle the known ones (sound unlock, storage, screen notches). You're my real-device tester for the rest. |
+| **Phone quirks** | Low priority now | PC is the main target. I'll keep the phone working (sound unlock, screen notches, touch), and you'll tell me if something's off. |
 | **AI tool changes** (ChatGPT image sizes or features change mid-project) | Medium | All art goes through my processing step, so a change in source format is a small fix, not a crisis. |
 
 ---
 
 ## 11. Questions for you
 
-**Big ones:**
-1. **The story.** Thoughts on [`STORY.md`](STORY.md)? (It has its own questions at the bottom.)
-2. **Art direction.** After trying the prompts in [`ART-STYLE-TESTS.md`](ART-STYLE-TESTS.md): Painted Storybook (A),
-   Paper Theatre (B), or something else?
+**Still open:**
+1. **The story.** We're doing a fresh pitch round (see the Decision Log).
+2. **Art direction.** After trying [`prompts/001-art-style-tests.md`](../prompts/001-art-style-tests.md): Painted Storybook (A),
+   Paper Theatre (B), Ink & Watercolor (C), or something else?
 3. **Animation honesty check.** Are you OK with charming cut-out puppet animation rather than hand-drawn
    frame-by-frame animation?
+4. **Voices:** do you want the game to eventually be fully voiced, narrator-only, or text-only?
+5. **Pace:** how much time per week do you expect to spend? There's no wrong answer. It just helps me size each batch of art requests.
 
-**Practical ones:**
-4. **What devices** will you mainly play on (iPhone model, iPad, PC)? It affects image sizes.
-5. **Is this GitHub repo public or private?** That decides where we host the game. Do you mind if the game's URL is
-   technically public, as long as nobody knows it?
-6. **Do you have a Mac?** Not needed, but it tells me whether a native iOS app is ever an option.
-7. **Voices:** do you want the game to eventually be fully voiced, narrator-only, or text-only?
-8. **Pace:** how much time per week do you expect to spend? There's no wrong answer. It just helps me size each batch of art requests.
+**Answered:**
+- *Devices:* a PC and a phone, no Mac. PC is the main target (see §3).
+- *Public or private repo:* your call was "either". I recommend private (see §3, Hosting).
 
 ---
 
@@ -427,8 +433,17 @@ comfort settings, and (optional) the native iOS wrapper.
 | Date | Decision | Why |
 |---|---|---|
 | 2026-11-07 | Original story and world, KQ7-*style* mechanics only | Your request, and the right way to do it |
-| 2026-11-07 | *Proposed:* web game installed to Home Screen (PWA), with a native wrapper optional later | Runs on iPhone, iPad and PC, needs no Mac, and I can build and test all of it |
-| 2026-11-07 | *Proposed:* TypeScript + PixiJS (drawing only) + a custom adventure engine | Full control, built for touch, everything understood, nothing templated |
+| 2026-11-07 | **PC first** (mouse, 16:9). The phone keeps working as a bonus from the same code. | You have a PC and a phone and said PC-only is fine if it makes a better game. Mouse hover, a bigger screen and exact testing make it better. |
+| 2026-11-07 | Web game (TypeScript), played in the browser. No App Store or Mac needed. | Runs everywhere, auto-updates, and I can build and test all of it myself |
+| 2026-11-07 | All requests for ChatGPT (and later Runway) live in `prompts/`. ChatGPT reads them through its GitHub connection. | You connected ChatGPT to the repo, so you just point it at a file instead of copy-pasting |
+| 2026-11-07 | Art style tests made story-neutral | The story is being re-pitched, so no art effort gets wasted |
+| 2026-11-07 | Story Draft 1 ("The Long Dusk", grandmother and granddaughter) **not approved**. Fresh pitch round, written game-first. | You weren't loving it. You *did* like the "stuck in time" idea and want a Miss-Peregrine-style **repeating day/time loop** explored. |
+| 2026-11-07 | **New story direction (yours):** an original game *inspired by the premise of* Miss Peregrine's Home for Peculiar Children. You travel to an island, enter a one-day time loop, meet a bird-headmistress who resets it, explore the house, help unusual children, build glasses to see invisible monsters, make weapons, and prepare for a final battle you can lose. | Your concept. We keep the premise and feeling but write our own characters, names, powers and plot (same rule as King's Quest). Draft 2 is in `docs/story-drafts/`. |
+| 2026-11-07 | Story workflow: Claude drafts → ChatGPT reviews and revises (`prompts/002-story-review.md`) → Claude reviews ChatGPT's edits → you decide | Your idea, so two different writers each challenge the other |
+| 2026-11-07 | *Proposed with Draft 2:* losing the final battle rewinds you to the morning of the last day, keeping your items and knowledge | Real failure without permanent dead ends, using the time loop itself as the safety net |
+| 2026-11-07 | *Proposed with Draft 2:* scope drops to ~20–25 backgrounds (one house + island across days and lighting) | Far more achievable than Draft 1's six regions |
+| 2026-11-07 | *Proposed:* keep the repo private and host on a free private-repo-friendly service | Your personal email is on the first commit |
+| 2026-11-07 | *Proposed:* TypeScript + PixiJS (drawing only) + a custom adventure engine | Full control, everything understood, nothing templated |
 | 2026-11-07 | *Proposed:* greybox first, then an art test, then Chapter 1 as a vertical slice | Find the hard problems early, before making 50 backgrounds |
 
 *"Proposed" items become decisions once you OK them.*
