@@ -21,7 +21,8 @@ is the creative director. Claude is the game developer and story writer. It's a 
   Premises, genre conventions and mechanics are fine.
 - **Story workflow:** Claude drafts, ChatGPT reviews and revises (via `prompts/002-story-review.md`), and then the two
   alternate numbered drafts in `docs/story-drafts/` under `prompts/003-story-review-rounds.md` until both approve.
-  Log every round in `docs/story-drafts/REVIEW-LOG.md`. Review ChatGPT's work on its merits and keep what's better.
+  Log every round in `docs/story-drafts/REVIEW-LOG.md`. Route: ChatGPT's drafts go to `main`; Claude's drafts go to the
+  `story-review-handoff` branch (PR #1, kept open). Rebase that branch onto `main` before each push. Review ChatGPT's work on its merits and keep what's better.
   The owner gives the final sign-off.
 - **Collaborate.** Ask the owner questions at real decision points. They want to be involved, not handed things.
 - **Be honest.** Say clearly when something isn't working, is beyond what Claude does well, or needs another tool

@@ -58,8 +58,11 @@ After those five lines, every handoff file has:
 4. **The complete story**, in the same section structure as before.
 
 ## Where the file goes
-- **If you can write to the repo,** save it at `docs/story-drafts/<file name>` on the `main` branch (or on any branch or pull
-  request). Claude checks every branch.
+- **ChatGPT's drafts** go in `docs/story-drafts/` on **`main`**.
+- **Claude's drafts** go in `docs/story-drafts/` on the **`story-review-handoff`** branch, which is pull request #1 and stays
+  open for the whole review. Each new commit there means Claude has handed back. Before each round, Claude also reads
+  the latest ChatGPT draft from `main`.
+- Claude checks every branch every 15 minutes, so a file in the wrong place still gets found.
 - **If you can't,** give the owner the file to download. They'll upload it to `docs/story-drafts/` on GitHub (Add file → Upload files).
 
 ## The review checklist (both writers use it)
