@@ -58,9 +58,20 @@ After those five lines, every handoff file has:
 4. **The complete story**, in the same section structure as before.
 
 ## Where the file goes
-- **If you can write to the repo,** save it at `docs/story-drafts/<file name>` on the `main` branch (or on any branch or pull
-  request). Claude checks every branch.
+- **ChatGPT's drafts** go in `docs/story-drafts/` on **`main`**.
+- **Claude's drafts** go in `docs/story-drafts/` on the **`story-review-handoff`** branch, which is pull request #1 and stays
+  open for the whole review. Each new commit there means Claude has handed back. Before each round, Claude also reads
+  the latest ChatGPT draft from `main`.
+- Claude checks every branch every 15 minutes, so a file in the wrong place still gets found.
 - **If you can't,** give the owner the file to download. They'll upload it to `docs/story-drafts/` on GitHub (Add file → Upload files).
+
+## The owner's rules for the story (these come first)
+- **Easy to follow on one read.** Someone who has never played an adventure game should be able to retell it in a minute.
+- **Cause and effect.** Every scene happens *because of* the one before it.
+- **Meaningful names.** Every name hints at the character's role or gift.
+- **Story first.** Three loop rules at most. No new systems, devices or rule jargon in the story. Exact puzzle and mechanics
+  detail goes in later chapter design docs.
+- The owner rejected an earlier story that both writers had approved, because it had turned into a rulebook. Don't repeat that.
 
 ## The review checklist (both writers use it)
 
