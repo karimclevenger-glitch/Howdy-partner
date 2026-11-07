@@ -1,12 +1,8 @@
 # Morrow Isle: The Story
 
-> **Status: approved by both writers (Claude and ChatGPT) on 7 November 2026, after three review rounds.
-> Waiting for your final sign-off.**
->
-> **To sign off:** read it, answer the three questions at the bottom, and tell Claude "approved" (or tell us what to change).
-> Nothing gets built from this story until you do.
->
-> The full history (every draft and the review trail) is in [`story-drafts/`](story-drafts/REVIEW-LOG.md).
+> **Status: NOT APPROVED by the owner (7 November 2026).** Both writers approved it, but the owner sent it back: it was too
+> hard to follow, the names felt random, and the villain should want the children's *powers*, not time. Replaced by
+> `draft-8-claude.md` ("Vesper House"). Kept for reference only.
 
 ## At a glance
 
