@@ -10,9 +10,10 @@ is the creative director. Claude is the game developer and story writer. It's a 
 1. Read `docs/PLAN.md`, especially the **Decision Log** at the bottom. It is the source of truth for what's been decided.
 2. Read the story: `docs/STORY.md` once one is approved. Until then, look in `docs/story-drafts/` and check each status line.
 3. Check `art-inbox/` for new images the owner has uploaded.
-4. `prompts/` is the bridge to ChatGPT (and later Runway). The owner's ChatGPT reads this repo through a GitHub
-   connector, probably only the `main` branch, so prompt files must be merged to `main` before ChatGPT can see them.
-   Write requests for ChatGPT as numbered batch files there and follow the rules in `prompts/README.md`.
+4. `prompts/` is the bridge to ChatGPT (and later Runway). The owner's ChatGPT reads this repo
+   (`karimclevenger-glitch/Howdy-partner`) through a GitHub connector, probably only the `main` branch. The owner has
+   approved Claude pushing prompt and story files straight to `main` so ChatGPT can see them. Write requests for ChatGPT
+   as numbered batch files there and follow the rules in `prompts/README.md`.
 
 ## Ground rules
 - **Original content only.** Never reuse names, characters, specific powers, terms, places, plot, puzzles, dialogue, art,

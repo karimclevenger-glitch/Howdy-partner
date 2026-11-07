@@ -90,10 +90,11 @@ touch controls. I just won't bend the PC version out of shape to fit a small scr
 **What this means for you:** I push an update, you refresh the game in your browser, and you're playing the new
 version. Your saves live in your browser, and there's a "back up my saves" button so you can't lose progress.
 
-**Hosting (where the game lives online).** I recommend **keeping this repo private.** Your personal email address is on the
-repo's first commit, and if the repo were public, anyone could see it, along with your story and art. Private repos
-can't use GitHub's free hosting, so when there's a first playable build I'll set up a private-repo-friendly option
-(e.g., Cloudflare Pages, which is free). That will take you about five minutes, once, and I'll walk you through it. Until then there's nothing to do.
+**Hosting (where the game lives online).** The project now lives in **`karimclevenger-glitch/Howdy-partner`**, which is
+**public**. That means free GitHub Pages hosting works, and I'll set it up when there's a first playable build. The trade-off
+is that anyone who finds the repo can see the story, the art, and the email address on its first commit. If you'd rather
+keep it private, switch it in the repo's Settings → General → "Change visibility", and I'll use a free private-friendly host
+(e.g., Cloudflare Pages) instead.
 
 ---
 
@@ -424,7 +425,7 @@ comfort settings, and (optional) the native iOS wrapper.
 
 **Answered:**
 - *Devices:* a PC and a phone, no Mac. PC is the main target (see §3).
-- *Public or private repo:* your call was "either". I recommend private (see §3, Hosting).
+- *Public or private repo:* your call was "either". The new repo is public, and you can switch it any time (see §3, Hosting).
 
 ---
 
@@ -443,7 +444,7 @@ comfort settings, and (optional) the native iOS wrapper.
 | 2026-11-07 | Story review rounds: ChatGPT and Claude alternate numbered draft files in `docs/story-drafts/` (rules in `prompts/003-story-review-rounds.md`) until **both approve**, with a cap of 4 rounds each, after which the disagreements go to you. Claude checks hourly for ChatGPT's handoffs via a scheduled task. You give the final sign-off. | Your request: catch story holes and make the story full of adventures and puzzles |
 | 2026-11-07 | *Proposed with Draft 2:* losing the final battle rewinds you to the morning of the last day, keeping your items and knowledge | Real failure without permanent dead ends, using the time loop itself as the safety net |
 | 2026-11-07 | *Proposed with Draft 2:* scope drops to ~20–25 backgrounds (one house + island across days and lighting) | Far more achievable than Draft 1's six regions |
-| 2026-11-07 | *Proposed:* keep the repo private and host on a free private-repo-friendly service | Your personal email is on the first commit |
+| 2026-11-07 | **Project moved to `karimclevenger-glitch/Howdy-partner`** (public). All work was carried over. The old repo's first commit was left out because it carried a personal email address. Claude pushes prompt and story files straight to `main`, so ChatGPT can read them without any pull requests. | GitHub was reconnected under a different account that can't see the old `KlarityK1` repo, and you asked for a new repo |
 | 2026-11-07 | *Proposed:* TypeScript + PixiJS (drawing only) + a custom adventure engine | Full control, everything understood, nothing templated |
 | 2026-11-07 | *Proposed:* greybox first, then an art test, then Chapter 1 as a vertical slice | Find the hard problems early, before making 50 backgrounds |
 
